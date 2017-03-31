@@ -17,13 +17,14 @@ namespace ftpUploader
         public Form1()
         {
             InitializeComponent();
+            lblUpload.Text = "";
         }
 
         struct FtpSetting
         {
-            public string server { get; set; }
-            public string username { get; set; }
-            public string password { get; set; }
+            public string Server { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
             public string FileName { get; set; }
             public string Fullname { get; set; }
         }
@@ -33,12 +34,12 @@ namespace ftpUploader
 
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            string filename = ((FtpSetting)e.Argument).FileName;
-            string fullname = ((FtpSetting)e.Argument).Fullname;
-            string username = ((FtpSetting)e.Argument).username;
-            string password = ((FtpSetting)e.Argument).password;
-            string server = ((FtpSetting)e.Argument).server;
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("{0}/{1}",server,filename)));
+            string filename = inputParameter.FileName;
+            string fullname = inputParameter.Fullname;
+            string username = inputParameter.Username;
+            string password = inputParameter.Password;
+            string server = inputParameter.Server;
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(new Uri(string.Format("ftp://{0}/{1}", server, filename)));
             request.Method = WebRequestMethods.Ftp.UploadFile;
             request.Credentials = new NetworkCredential(username, password);
             Stream ftpStream = request.GetRequestStream();
@@ -66,14 +67,14 @@ namespace ftpUploader
 
         private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            lblConnect.Text = $"connecting {e.ProgressPercentage} %";
+            lblUpload.Text = $"uploading {e.ProgressPercentage} %";
             progressBar.Value = e.ProgressPercentage;
             progressBar.Update();
         }
 
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            lblConnect.Text = "connection complete";
+            lblUpload.Text = "upload complete";
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
@@ -83,12 +84,13 @@ namespace ftpUploader
                 if(ofd.ShowDialog() == DialogResult.OK)
                 {
                     FileInfo fi = new FileInfo(ofd.FileName);
-                    inputParameter.username = txtUserName.Text;
-                    inputParameter.password = txtPassword.Text;
-                    inputParameter.server = txtServer.Text;
+                    inputParameter.Username = txtUserName.Text;
+                    inputParameter.Password = txtPassword.Text;
+                    inputParameter.Server = txtServer.Text;
                     inputParameter.FileName = fi.Name;
                     inputParameter.Fullname = fi.FullName;
-
+                    backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
+                    backgroundWorker.RunWorkerAsync();
                 }
             }
         }

@@ -1,0 +1,9 @@
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\bin\Debug\ftpUploader.exe.config
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\bin\Debug\ftpUploader.exe
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\bin\Debug\ftpUploader.pdb
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\obj\Debug\ftpUploader.Form1.resources
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\obj\Debug\ftpUploader.Properties.Resources.resources
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\obj\Debug\ftpUploader.csproj.GenerateResource.Cache
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\obj\Debug\ftpUploader.exe
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\obj\Debug\ftpUploader.pdb
+c:\users\anas\documents\visual studio 2015\Projects\ftpUploader\ftpUploader\obj\Debug\ftpUploader.csprojResolveAssemblyReference.cache

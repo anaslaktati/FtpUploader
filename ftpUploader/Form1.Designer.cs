@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonConnect = new System.Windows.Forms.Button();
+            this.buttonUpload = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,21 +36,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.treeViewUser = new System.Windows.Forms.TreeView();
-            this.treeViewServer = new System.Windows.Forms.TreeView();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.lblConnect = new System.Windows.Forms.Label();
+            this.lblUpload = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonConnect
+            // buttonUpload
             // 
-            this.buttonConnect.Location = new System.Drawing.Point(332, 73);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(75, 23);
-            this.buttonConnect.TabIndex = 0;
-            this.buttonConnect.Text = "Connect";
-            this.buttonConnect.UseVisualStyleBackColor = true;
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            this.buttonUpload.Location = new System.Drawing.Point(332, 73);
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpload.TabIndex = 0;
+            this.buttonUpload.Text = "Upload";
+            this.buttonUpload.UseVisualStyleBackColor = true;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonConnect_Click);
             // 
             // label1
             // 
@@ -97,6 +95,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(133, 76);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(146, 20);
             this.txtPassword.TabIndex = 2;
             // 
@@ -108,20 +107,6 @@
             this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker_ProgressChanged);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
             // 
-            // treeViewUser
-            // 
-            this.treeViewUser.Location = new System.Drawing.Point(57, 160);
-            this.treeViewUser.Name = "treeViewUser";
-            this.treeViewUser.Size = new System.Drawing.Size(158, 142);
-            this.treeViewUser.TabIndex = 3;
-            // 
-            // treeViewServer
-            // 
-            this.treeViewServer.Location = new System.Drawing.Point(249, 160);
-            this.treeViewServer.Name = "treeViewServer";
-            this.treeViewServer.Size = new System.Drawing.Size(158, 142);
-            this.treeViewServer.TabIndex = 3;
-            // 
             // progressBar
             // 
             this.progressBar.Location = new System.Drawing.Point(57, 111);
@@ -129,31 +114,29 @@
             this.progressBar.Size = new System.Drawing.Size(350, 23);
             this.progressBar.TabIndex = 4;
             // 
-            // lblConnect
+            // lblUpload
             // 
-            this.lblConnect.AutoSize = true;
-            this.lblConnect.Location = new System.Drawing.Point(193, 137);
-            this.lblConnect.Name = "lblConnect";
-            this.lblConnect.Size = new System.Drawing.Size(77, 13);
-            this.lblConnect.TabIndex = 5;
-            this.lblConnect.Text = "connecting 0%";
+            this.lblUpload.AutoSize = true;
+            this.lblUpload.Location = new System.Drawing.Point(193, 137);
+            this.lblUpload.Name = "lblUpload";
+            this.lblUpload.Size = new System.Drawing.Size(72, 13);
+            this.lblUpload.TabIndex = 5;
+            this.lblUpload.Text = "Uploading 0%";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(450, 314);
-            this.Controls.Add(this.lblConnect);
+            this.Controls.Add(this.lblUpload);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.treeViewServer);
-            this.Controls.Add(this.treeViewUser);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtServer);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonConnect);
+            this.Controls.Add(this.buttonUpload);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -163,7 +146,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Button buttonUpload;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Label label2;
@@ -171,10 +154,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
-        private System.Windows.Forms.TreeView treeViewUser;
-        private System.Windows.Forms.TreeView treeViewServer;
         private System.Windows.Forms.ProgressBar progressBar;
-        private System.Windows.Forms.Label lblConnect;
+        private System.Windows.Forms.Label lblUpload;
     }
 }
 
